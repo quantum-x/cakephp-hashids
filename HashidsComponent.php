@@ -4,7 +4,7 @@ App::import('Vendor', 'Hashids' . DS . 'Hashids');
 
 class HashidsComponent extends Component {
 
-  private static $hashIds;
+  private static $hashids;
 
   public function __construct(ComponentCollection $collection = null, $settings = array()) {
     $settings = Set::merge(array (
@@ -13,29 +13,29 @@ class HashidsComponent extends Component {
         'alphabet' => ''
     ), $settings);
 
-    self::$hashIds = new Hashids\Hashids($settings['salt'], $settings['min_hash_length'], $settings['alphabet']);
+    self::$hashids = new Hashids\Hashids($settings['salt'], $settings['min_hash_length'], $settings['alphabet']);
   }
 
   public static function encrypt() {
     return call_user_func_array(array (
-        self::$hashIds,
+        self::$hashids,
         'encrypt'
     ), func_get_args());
   }
 
   public static function decrypt($hash) {
-    return self::$hashIds->decrypt($hash);
+    return self::$hashids->decrypt($hash);
   }
 
   public static function encrypt_hex($str) {
-    return self::$hashIds->encrypt_hex($str);
+    return self::$hashids->encrypt_hex($str);
   }
 
   public static function decrypt_hex($hash) {
-    return self::$hashIds->decrypt_hex($hash);
+    return self::$hashids->decrypt_hex($hash);
   }
 
   public static function get_max_int_value() {
-    return self::$hashIds->get_max_int_value();
+    return self::$hashids->get_max_int_value();
   }
 }
