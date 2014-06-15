@@ -1,6 +1,6 @@
 # cakephp-hashids
 
-[Hashids](http://www.hashids.org) Component for [CakePHP](http://cakephp.org/)
+[Hashids](http://www.hashids.org) Component for [CakePHP](http://cakephp.org/) 2.x
 
 ## Usage
 
