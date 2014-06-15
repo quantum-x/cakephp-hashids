@@ -28,11 +28,11 @@ class HashidsComponent extends Component {
   }
 
   public static function encrypt_hex($str) {
-    return self::$hashIds->decrypt($str);
+    return self::$hashIds->encrypt_hex($str);
   }
 
   public static function decrypt_hex($hash) {
-    return self::$hashIds->decrypt($hash);
+    return self::$hashIds->decrypt_hex($hash);
   }
 
   public static function get_max_int_value() {
