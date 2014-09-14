@@ -19,20 +19,20 @@ class HashidsComponent extends Component {
   public static function encrypt() {
     return call_user_func_array(array (
         self::$hashids,
-        'encrypt'
+        'encode'
     ), func_get_args());
   }
 
   public static function decrypt($hash) {
-    return self::$hashids->decrypt($hash);
+    return self::$hashids->decode($hash);
   }
 
   public static function encrypt_hex($str) {
-    return self::$hashids->encrypt_hex($str);
+    return self::$hashids->encode_hex($str);
   }
 
   public static function decrypt_hex($hash) {
-    return self::$hashids->decrypt_hex($hash);
+    return self::$hashids->decode_hex($hash);
   }
 
   public static function get_max_int_value() {
