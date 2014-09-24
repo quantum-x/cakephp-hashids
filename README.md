@@ -20,10 +20,21 @@ public $components = array (
 
 And use on your Controllers like this:
 ```php
-$this->Hashids->encrypt(1, 2, 3);
+$this->Hashids->encode(1, 2, 3);
 ```
 
 Or in your Components, Views or anywhere else:
 ```php
-HashidsComponent::encrypt(1, 2, 3);
+HashidsComponent::encode(1, 2, 3);
 ```
+
+## Update
+
+Since v1.0.0, several public functions of Hashids were renamed to be more appropriate:
+
+* Function `encrypt()` changed to `encode()`
+* Function `decrypt()` changed to `decode()`
+* Function `encrypt_hex()` changed to `encode_hex()`
+* Function `decrypt_hex()` changed to `decode_hex()`
+
+The component's method names were also changed to maintain consistency.
