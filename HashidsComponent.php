@@ -16,22 +16,22 @@ class HashidsComponent extends Component {
     self::$hashids = new Hashids\Hashids($settings['salt'], $settings['min_hash_length'], $settings['alphabet']);
   }
 
-  public static function encrypt() {
+  public static function encode() {
     return call_user_func_array(array (
         self::$hashids,
         'encode'
     ), func_get_args());
   }
 
-  public static function decrypt($hash) {
+  public static function decode($hash) {
     return self::$hashids->decode($hash);
   }
 
-  public static function encrypt_hex($str) {
+  public static function encode_hex($str) {
     return self::$hashids->encode_hex($str);
   }
 
-  public static function decrypt_hex($hash) {
+  public static function decode_hex($hash) {
     return self::$hashids->decode_hex($hash);
   }
 
