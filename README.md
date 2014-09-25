@@ -4,8 +4,6 @@
 
 ## Usage
 
-###Encoding
-
 First, get **Hashids.php** from http://www.hashids.org/php/ and put it in your app's **Vendor/Hashids** folder.
 
 Then, add this to your **AppController.php**:
@@ -20,7 +18,9 @@ public $components = array (
 );
 ```
 
-And use on your Controllers like this:
+###Encoding
+
+Use on your Controllers like this:
 ```php
 $encoded = $this->Hashids->encode(1, 2, 3);
 ```
@@ -29,6 +29,7 @@ Or in your Components, Views or anywhere else:
 ```php
 $encoded = HashidsComponent::encode(1, 2, 3);
 ```
+
 ###Decoding
 
 By default, this component retruns the first element of the resulting decode:
