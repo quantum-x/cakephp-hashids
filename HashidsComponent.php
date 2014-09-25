@@ -23,8 +23,14 @@ class HashidsComponent extends Component {
     ), func_get_args());
   }
 
-  public static function decode($hash) {
-    return self::$hashids->decode($hash);
+  public static function decode($hash, $array = false) {
+    $result = self::$hashids->decode($hash);
+
+    if ($array) {
+        return $result;
+    }
+
+    return $result[0];
   }
 
   public static function encode_hex($str) {
