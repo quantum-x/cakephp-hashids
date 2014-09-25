@@ -20,7 +20,7 @@ public $components = array (
 
 ###Encoding
 
-Use on your Controllers like this:
+Use in your Controllers like this:
 ```php
 $encoded = $this->Hashids->encode(1, 2, 3);
 ```
