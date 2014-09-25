@@ -20,12 +20,22 @@ public $components = array (
 
 And use on your Controllers like this:
 ```php
-$this->Hashids->encode(1, 2, 3);
+$encoded = $this->Hashids->encode(1, 2, 3);
 ```
 
 Or in your Components, Views or anywhere else:
 ```php
-HashidsComponent::encode(1, 2, 3);
+$encoded = HashidsComponent::encode(1, 2, 3);
+```
+
+By default, this component retruns the first element of the resulting decode:
+```php
+$this->Hashids->decode($encoded); // --> 1
+```
+
+If you wish to get an array instead, set the second parameter to `true`, like this:
+```php
+$this->Hashids->decode($encoded, true); // --> array(1, 2, 3);
 ```
 
 ## Update
