@@ -34,7 +34,7 @@ $encoded = HashidsComponent::encode(1, 2, 3);
 
 ###Decoding
 
-By default, this component retruns the first element of the resulting decode:
+By default, this component returns the first element of the resulting decode:
 ```php
 $this->Hashids->decode($encoded); // --> 1
 ```
