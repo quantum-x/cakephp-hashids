@@ -1,5 +1,6 @@
 <?php
 App::uses('Component', 'Controller');
+App::import('Vendor', 'Hashids' . DS . 'HashGenerator');
 App::import('Vendor', 'Hashids' . DS . 'Hashids');
 
 class HashidsComponent extends Component {
@@ -30,7 +31,11 @@ class HashidsComponent extends Component {
         return $result;
     }
 
-    return $result[0];
+	if (!empty($result)) {
+	    return $result[0];
+	}
+	
+	return false;
   }
 
   public static function encode_hex($str) {

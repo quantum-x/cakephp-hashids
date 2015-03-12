@@ -4,9 +4,11 @@
 
 ## Usage
 
-First, get **Hashids.php** from http://www.hashids.org/php/ and put it in your app's **Vendor/Hashids** folder.
+First, get **Hashids.php** and **HashGenerator.php** from http://www.hashids.org/php/ and put them in your app's **Vendor/Hashids** folder.
 
-Then, add this to your **AppController.php**:
+Then put **HashidsComponent.php** to your app's **Controller/Component** folder.
+
+And lastly, add this to your **AppController.php**:
 ```php
 public $components = array (
 	// ...
